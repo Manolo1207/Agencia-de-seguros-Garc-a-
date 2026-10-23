@@ -228,22 +228,25 @@ if (form) {
     });
 }
 
-document.querySelectorAll('.quote-trigger').forEach(link => {
-    link.addEventListener('click', (event) => {
-        event.preventDefault();
+document.addEventListener('click', (event) => {
+    const link = event.target.closest('.quote-trigger');
+    if (!link) return;
 
-        const serviceLabel = link.dataset.serviceLabel || '';
-        document.body.classList.remove('service-page-open');
-        showOverview();
-        if (serviceLabel) {
-            setTimeout(() => populateQuoteService(serviceLabel), 80);
+    event.preventDefault();
+
+    const serviceLabel = link.dataset.serviceLabel || '';
+    document.body.classList.remove('service-page-open');
+    showOverview();
+
+    if (serviceLabel) {
+        setTimeout(() => populateQuoteService(serviceLabel), 80);
+    }
+
+    setTimeout(() => {
+        const contactSection = document.getElementById('contacto');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-
-        setTimeout(() => {
-            const contactSection = document.getElementById('contacto');
-            if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }, 160);
-    });
+        window.location.hash = 'contacto';
+    }, 160);
 });
