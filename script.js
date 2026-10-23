@@ -130,7 +130,7 @@ function showServiceDetail(serviceId) {
                 ${service.items.map(item => `<li>${item}</li>`).join('')}
             </ul>
             <div class="detail-page-actions">
-                <a class="btn btn-primary" href="#contacto">Solicitar cotización</a>
+                <a class="btn btn-primary quote-trigger" href="#contacto" data-service-label="${service.label}">Solicitar cotización</a>
                 <button class="btn btn-secondary service-back" type="button">Volver</button>
             </div>
         </article>
@@ -178,20 +178,60 @@ handleServiceHash();
 window.addEventListener('hashchange', handleServiceHash);
 
 const form = document.querySelector('.contact-form');
+const whatsappNumber = '5212321567519';
+
+function populateQuoteService(serviceLabel) {
+    if (!form) return;
+    const serviceInput = form.querySelector('select[name="service"]');
+    if (!serviceInput) return;
+    if (serviceLabel) {
+        Array.from(serviceInput.options).forEach(option => {
+            if (option.value.toLowerCase() === serviceLabel.toLowerCase()) {
+                serviceInput.value = option.value;
+            }
+        });
+    }
+}
 
 if (form) {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         const button = form.querySelector('button');
-        const originalText = button.textContent;
+        const name = form.querySelector('input[name="name"]').value.trim();
+        const email = form.querySelector('input[name="email"]').value.trim();
+        const phone = form.querySelector('input[name="phone"]').value.trim();
+        const service = form.querySelector('select[name="service"]').value.trim();
+        const details = form.querySelector('textarea[name="details"]').value.trim();
 
-        button.textContent = '¡Gracias!';
+        const message = [
+            'Hola, quiero solicitar una cotización.',
+            '',
+            `Nombre: ${name || 'No indicado'}`,
+            `Correo: ${email || 'No indicado'}`,
+            `Teléfono: ${phone || 'No indicado'}`,
+            `Seguro de interés: ${service || 'No indicado'}`,
+            `Detalles: ${details || 'Sin detalles adicionales'}`
+        ].join('\n');
+
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank', 'noopener');
+
+        const originalText = button.textContent;
+        button.textContent = 'Se abrió WhatsApp';
         button.disabled = true;
 
         setTimeout(() => {
             button.textContent = originalText;
             button.disabled = false;
             form.reset();
-        }, 1800);
+        }, 2200);
     });
 }
+
+document.querySelectorAll('.quote-trigger').forEach(link => {
+    link.addEventListener('click', () => {
+        const serviceLabel = link.dataset.serviceLabel || '';
+        if (!serviceLabel) return;
+        setTimeout(() => populateQuoteService(serviceLabel), 80);
+    });
+});

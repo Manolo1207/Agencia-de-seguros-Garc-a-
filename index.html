@@ -60,7 +60,7 @@
                 <a href="#contacto">Contacto</a>
             </nav>
 
-            <a class="btn btn-primary" href="#contacto">Cotiza ahora</a>
+            <a class="btn btn-primary quote-trigger" href="#contacto" data-service-label="General">Cotiza ahora</a>
         </div>
     </header>
 
@@ -223,10 +223,37 @@
                     <h2>Hablemos de la mejor protección para ti.</h2>
                 </div>
 
-                <form class="contact-form">
-                    <input type="text" placeholder="Tu nombre" aria-label="Tu nombre" />
-                    <input type="email" placeholder="Correo electrónico" aria-label="Correo electrónico" />
-                    <button type="submit" class="btn btn-primary">Solicitar cita</button>
+                <form class="contact-form" id="quote-form">
+                    <label class="field">
+                        <span>Nombre</span>
+                        <input type="text" name="name" placeholder="Tu nombre" aria-label="Tu nombre" required />
+                    </label>
+                    <label class="field">
+                        <span>Correo</span>
+                        <input type="email" name="email" placeholder="Correo electrónico" aria-label="Correo electrónico" required />
+                    </label>
+                    <label class="field">
+                        <span>Teléfono</span>
+                        <input type="tel" name="phone" placeholder="Tu teléfono" aria-label="Tu teléfono" required />
+                    </label>
+                    <label class="field">
+                        <span>Seguro</span>
+                        <select name="service" aria-label="Seguro de interés" required>
+                            <option value="">Selecciona un seguro</option>
+                            <option value="Auto">Auto</option>
+                            <option value="Hogar">Hogar</option>
+                            <option value="Vida">Vida</option>
+                            <option value="Salud">Salud</option>
+                            <option value="Empresarial">Empresarial</option>
+                            <option value="Viajes">Viajes</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </label>
+                    <label class="field field-full">
+                        <span>Detalles</span>
+                        <textarea name="details" rows="3" placeholder="Cuéntanos qué necesitas o la cobertura que buscas"></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-primary">Solicitar cotización</button>
                 </form>
             </div>
         </section>
