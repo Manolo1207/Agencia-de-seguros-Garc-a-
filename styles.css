@@ -983,6 +983,70 @@ body.service-page-open .site-footer {
     gap: 0.55rem;
 }
 
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
+}
+
+.contact-button,
+.action-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.contact-button {
+    background: linear-gradient(135deg, #ffffff 0%, #dfeeff 100%);
+    color: var(--primary-dark);
+    font-weight: 700;
+    padding: 0.8rem 1rem;
+    min-width: 110px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.contact-button:hover,
+.action-link:hover {
+    transform: translateY(-2px);
+}
+
+.action-link {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: white;
+    padding: 0.75rem 0.9rem;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.footer-list {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.map-wrapper {
+    padding-bottom: 2rem;
+}
+
+.map-card {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.map-card iframe {
+    display: block;
+    width: 100%;
+    min-height: 260px;
+    border: 0;
+}
+
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     padding: 1.2rem 0 2rem;
