@@ -1,6 +1,6 @@
 const siteContent = {
     brand: {
-        name: 'GAZTEA',
+        name: 'GARCÍA',
         subtitle: 'SEGUROS'
     },
     hero: {
@@ -12,8 +12,8 @@ const siteContent = {
             'PLANES ACCESIBLES',
             'ASESORÍA PERSONALIZADA'
         ],
-        phone: '2207529770',
-        phoneHref: 'tel:+522207529770'
+        phone: '2321567519',
+        phoneHref: 'tel:+522321567519'
     },
     services: [
         {
