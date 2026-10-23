@@ -758,6 +758,45 @@ body.service-page-open .site-footer {
     margin: 0;
 }
 
+.trust-panel {
+    margin-top: 2rem;
+    background: linear-gradient(180deg, #ffffff 0%, #edf5ff 100%);
+    border: 1px solid rgba(13, 92, 157, 0.12);
+    border-radius: 1.4rem;
+    padding: 1.4rem;
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.04);
+}
+
+.trust-panel h3 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.trust-grid>div {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(13, 92, 157, 0.08);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.trust-grid strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+    font-size: 1rem;
+}
+
+.trust-grid p {
+    margin: 0;
+    font-size: 0.98rem;
+}
+
 .info-panel {
     display: grid;
     gap: 1rem;
