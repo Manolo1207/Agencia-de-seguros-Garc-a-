@@ -229,9 +229,21 @@ if (form) {
 }
 
 document.querySelectorAll('.quote-trigger').forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+
         const serviceLabel = link.dataset.serviceLabel || '';
-        if (!serviceLabel) return;
-        setTimeout(() => populateQuoteService(serviceLabel), 80);
+        document.body.classList.remove('service-page-open');
+        showOverview();
+        if (serviceLabel) {
+            setTimeout(() => populateQuoteService(serviceLabel), 80);
+        }
+
+        setTimeout(() => {
+            const contactSection = document.getElementById('contacto');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 160);
     });
 });
