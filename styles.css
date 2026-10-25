@@ -1031,18 +1031,20 @@ body.service-page-open .site-footer {
 }
 
 .mini-button {
-    background: linear-gradient(135deg, #ffffff 0%, #dfeeff 100%);
-    color: var(--primary-dark);
-    font-weight: 700;
-    padding: 0.5rem 0.7rem;
-    min-width: 90px;
+    background: linear-gradient(135deg, #20c65a 0%, #16a34a 100%);
+    color: #ffffff;
+    font-weight: 800;
+    padding: 0.55rem 0.8rem;
+    min-width: 96px;
     font-size: 0.75rem;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 20px rgba(22, 163, 74, 0.22);
+    border: 1px solid rgba(18, 120, 48, 0.35);
 }
 
 .action-link:hover,
 .mini-button:hover {
     transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(22, 163, 74, 0.28);
 }
 
 .action-link {
