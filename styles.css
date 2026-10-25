@@ -1043,7 +1043,7 @@ body.service-page-open .site-footer {
     margin-top: 1.2rem;
 }
 
-.contact-button,
+.mini-button,
 .action-link {
     display: inline-flex;
     align-items: center;
@@ -1053,17 +1053,18 @@ body.service-page-open .site-footer {
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.contact-button {
+.mini-button {
     background: linear-gradient(135deg, #ffffff 0%, #dfeeff 100%);
     color: var(--primary-dark);
     font-weight: 700;
-    padding: 0.8rem 1rem;
-    min-width: 110px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    padding: 0.5rem 0.7rem;
+    min-width: 90px;
+    font-size: 0.75rem;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
-.contact-button:hover,
-.action-link:hover {
+.action-link:hover,
+.mini-button:hover {
     transform: translateY(-2px);
 }
 
@@ -1071,9 +1072,16 @@ body.service-page-open .site-footer {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.12);
     color: white;
-    padding: 0.75rem 0.9rem;
+    padding: 0.7rem 0.9rem;
     width: 100%;
     justify-content: flex-start;
+}
+
+.contact-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.7rem;
+    align-items: center;
 }
 
 .footer-list {
