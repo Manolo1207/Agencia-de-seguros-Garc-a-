@@ -140,38 +140,53 @@ p {
 .brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.7rem;
-    font-weight: 800;
-    font-size: 1.1rem;
+    gap: 0.8rem;
+    font-weight: 700;
+    font-size: 1.05rem;
     color: var(--text);
+}
+
+.brand-text {
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    letter-spacing: -0.04em;
+    color: #3b2a2d;
+}
+
+.brand-title {
+    font-weight: 900;
+    color: #7d0f34;
 }
 
 .brand-mark {
     position: relative;
     display: grid;
     place-items: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    min-width: 3.5rem;
+    width: 3.15rem;
+    height: 3.15rem;
+    min-width: 3.15rem;
     background: linear-gradient(135deg, #7a0d34 0%, #a31842 100%);
-    clip-path: polygon(18% 0%, 82% 0%, 100% 18%, 100% 58%, 70% 100%, 30% 100%, 0% 58%, 0% 18%);
-    box-shadow: 0 8px 18px rgba(122, 13, 52, 0.25);
+    clip-path: polygon(18% 0%, 82% 0%, 100% 16%, 100% 58%, 68% 100%, 32% 100%, 0% 58%, 0% 16%);
+    box-shadow: 0 8px 18px rgba(122, 13, 52, 0.2);
     overflow: hidden;
 }
 
 .brand-mark::before {
     content: "";
     position: absolute;
-    inset: 0.22rem 0.28rem 0.28rem 0.28rem;
-    background: linear-gradient(135deg, #7e7b7d, #b9b8b8);
-    clip-path: polygon(18% 0%, 82% 0%, 100% 18%, 100% 58%, 70% 100%, 30% 100%, 0% 58%, 0% 18%);
-    transform: translateY(-0.1rem);
+    inset: 0.18rem 0.24rem 0.2rem 0.26rem;
+    background: linear-gradient(135deg, #9a9799, #c4c0c1 52%, #8c8b8d);
+    clip-path: polygon(18% 0%, 82% 0%, 100% 16%, 100% 58%, 68% 100%, 32% 100%, 0% 58%, 0% 16%);
+    transform: translateX(0.36rem) translateY(-0.08rem);
 }
 
 .brand-mark-shield {
     position: relative;
     z-index: 1;
-    font-size: 2rem;
+    display: inline-block;
+    font-size: 1.9rem;
     line-height: 1;
     font-weight: 900;
     letter-spacing: -0.12em;
