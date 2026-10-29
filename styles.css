@@ -164,35 +164,37 @@ p {
     position: relative;
     display: grid;
     place-items: center;
-    width: 3.15rem;
-    height: 3.15rem;
-    min-width: 3.15rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    min-width: 3.5rem;
     background: linear-gradient(135deg, #7a0d34 0%, #a31842 100%);
     clip-path: polygon(18% 0%, 82% 0%, 100% 16%, 100% 58%, 68% 100%, 32% 100%, 0% 58%, 0% 16%);
-    box-shadow: 0 8px 18px rgba(122, 13, 52, 0.2);
+    box-shadow: 0 10px 20px rgba(122, 13, 52, 0.22);
     overflow: hidden;
 }
 
 .brand-mark::before {
     content: "";
     position: absolute;
-    inset: 0.15rem 0.3rem 0.15rem 0.15rem;
+    top: 0.12rem;
+    right: 0.12rem;
+    bottom: 0.12rem;
+    left: 1.15rem;
     background: linear-gradient(135deg, #8d8b8d, #b2b0b1 52%, #807f80);
-    clip-path: polygon(13% 0%, 87% 0%, 100% 18%, 100% 60%, 67% 100%, 33% 100%, 0% 60%, 0% 18%);
-    transform: translate(0.25rem, -0.04rem);
-    border-radius: 0.15rem;
+    clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 58%, 18% 50%);
+    border-radius: 0.1rem;
 }
 
 .brand-mark-shield {
     position: relative;
     z-index: 1;
     display: inline-block;
-    font-size: 1.9rem;
+    font-size: 2.05rem;
     line-height: 1;
     font-weight: 900;
-    letter-spacing: -0.12em;
+    letter-spacing: -0.14em;
     color: #ffffff;
-    transform: translateY(-0.02rem);
+    transform: translateY(-0.04rem) translateX(-0.08rem);
 }
 
 .main-nav {
